@@ -1,0 +1,38 @@
+# Node & package manager artifacts
+node_modules/
+.pnp.*
+
+# Build outputs
+/dist/
+**/dist/
+build/
+exports/
+*.tsbuildinfo
+coverage/
+playwright-report/
+e2e/test-results/
+
+# Logs & temp files
+*.log
+*.tmp
+
+# Rust/Tauri
+/apps/desktop/src-tauri/Cargo.lock
+/apps/desktop/src-tauri/target/
+**/target/
+apps/desktop/src-tauri/icons/*
+!apps/desktop/src-tauri/icons/.gitkeep
+!apps/desktop/src-tauri/icons/README.md
+*.AppImage
+*.deb
+*.dmg
+*.exe
+*.msi
+*.pkg
+*.rpm
+*.tar.gz
+*.zip
+
+# OS cruft
+.DS_Store
+Thumbs.db
