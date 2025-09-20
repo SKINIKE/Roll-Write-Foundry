@@ -1,0 +1,86 @@
+{
+  "id": "meteor-miners",
+  "name": "Meteor Miners",
+  "version": "1.0.0",
+  "description": "Command a deep-space mining crew to harvest ore and crystals from passing meteors.",
+  "resources": [
+    { "id": "ore", "label": "Ore", "initial": 0, "min": 0, "max": 30 },
+    { "id": "crystal", "label": "Crystal", "initial": 0, "min": 0, "max": 12 },
+    { "id": "combo", "label": "Combo", "initial": 0, "min": 0, "max": 6 },
+    { "id": "achievements", "label": "Achievements", "initial": 0, "min": 0, "max": 3 }
+  ],
+  "dice": [
+    { "id": "core", "label": "Twin Thrusters", "sides": 6, "count": 2 }
+  ],
+  "actions": [
+    {
+      "id": "claim-commendation",
+      "label": "Claim Commendation",
+      "description": "Spend forged combos to impress the guild and earn achievements.",
+      "priority": 5,
+      "condition": "combo >= 2 && achievements < 3",
+      "effects": [
+        { "resource": "combo", "expression": "-2" },
+        { "resource": "achievements", "expression": "1" }
+      ]
+    },
+    {
+      "id": "precision-crack",
+      "label": "Precision Crack",
+      "description": "On towering rolls, blast apart the meteor core to reveal crystals.",
+      "priority": 4,
+      "condition": "roll_total >= 10 && ore >= 2",
+      "effects": [
+        { "resource": "ore", "expression": "-2" },
+        { "resource": "crystal", "expression": "1" }
+      ]
+    },
+    {
+      "id": "blast-meteor",
+      "label": "Blast Meteor",
+      "description": "Convert a stable hit into two ore for future projects.",
+      "priority": 3,
+      "condition": "roll_total >= 6",
+      "effects": [
+        { "resource": "ore", "expression": "2" }
+      ]
+    },
+    {
+      "id": "refine-alloy",
+      "label": "Refine Alloy",
+      "description": "Invest ore and crystal into a high-value combo token.",
+      "priority": 2,
+      "condition": "ore >= 3 && crystal >= 1",
+      "effects": [
+        { "resource": "ore", "expression": "-3" },
+        { "resource": "crystal", "expression": "-1" },
+        { "resource": "combo", "expression": "1" }
+      ]
+    },
+    {
+      "id": "stabilize",
+      "label": "Stabilize Hull",
+      "description": "Take a breather and pocket a single ore when nothing else fits.",
+      "priority": 1,
+      "effects": [
+        { "resource": "ore", "expression": "1" }
+      ]
+    }
+  ],
+  "turn": { "limit": 12 },
+  "scoring": {
+    "total": "ore * 3 + crystal * 5 + combo * 4 + achievements * 0",
+    "components": {
+      "ore": "ore * 3",
+      "crystal": "crystal * 5",
+      "combo": "combo * 4"
+    }
+  },
+  "endConditions": [
+    { "type": "turnLimit", "limit": 12 }
+  ],
+  "metadata": {
+    "designer": "Roll & Write Foundry Core Team",
+    "created": "2024-05-01"
+  }
+}

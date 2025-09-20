@@ -1,0 +1,27 @@
+{
+  "name": "roll-write-foundry",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Roll & Write Foundry monorepo",
+  "license": "MIT",
+  "scripts": {
+    "prebuild": "pnpm install --recursive --prefer-offline",
+    "pretest": "pnpm install --recursive --prefer-offline",
+    "build": "pnpm -r build",
+    "test": "pnpm -r test",
+    "lint": "eslint \"**/*.{js,jsx,ts,tsx}\" --max-warnings=0",
+    "format": "prettier --check ."
+  },
+  "engines": {
+    "node": ">=18.18.0",
+    "pnpm": ">=8"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^6.21.0",
+    "@typescript-eslint/parser": "^6.21.0",
+    "eslint": "^8.57.0",
+    "eslint-config-prettier": "^9.1.0",
+    "prettier": "^3.2.5",
+    "typescript": "^5.4.5"
+  }
+}

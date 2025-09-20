@@ -1,0 +1,21 @@
+{
+  "$schema": "https://schema.tauri.app/config/2",
+  "tauri": {
+    "bundle": {
+      "identifier": "com.rollwritefoundry.desktop"
+    },
+    "windows": [
+      {
+        "title": "Roll & Write Foundry",
+        "width": 1024,
+        "height": 768
+      }
+    ]
+  },
+  "build": {
+    "beforeBuildCommand": "pnpm vite build",
+    "beforeDevCommand": "pnpm vite dev",
+    "devPath": "http://localhost:5173",
+    "distDir": "../dist"
+  }
+}
