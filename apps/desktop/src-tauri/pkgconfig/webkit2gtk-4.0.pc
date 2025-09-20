@@ -1,0 +1,7 @@
+# Compatibility shim to allow crates still probing for the WebKitGTK 4.0
+# pkg-config manifest to resolve against the 4.1 development files that ship
+# on modern Linux distributions.
+Name: WebKit2GTK 4.0 (compat)
+Description: Compatibility entry that forwards to WebKit2GTK 4.1
+Version: 4.1
+Requires: webkit2gtk-4.1

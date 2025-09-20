@@ -1,0 +1,7 @@
+# Compatibility shim for crates that still request the JavaScriptCoreGTK 4.0
+# pkg-config manifest. Redirects to the modern 4.1 package that ships with
+# WebKitGTK 4.1 distributions.
+Name: JavaScriptCoreGTK 4.0 (compat)
+Description: Compatibility entry that forwards to JavaScriptCoreGTK 4.1
+Version: 4.1
+Requires: javascriptcoregtk-4.1

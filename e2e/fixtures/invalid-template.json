@@ -1,0 +1,10 @@
+{
+  "id": "broken",
+  "name": "Broken Template",
+  "resources": [],
+  "dice": [],
+  "actions": [],
+  "turn": { "limit": 0 },
+  "scoring": { "total": "0" },
+  "endConditions": []
+}

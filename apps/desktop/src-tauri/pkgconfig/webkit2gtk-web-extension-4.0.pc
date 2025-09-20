@@ -1,0 +1,7 @@
+# Compatibility shim for crates referencing the legacy WebKitGTK web extension
+# manifest name. Modern distros expose only the 4.1 variant, so we forward the
+# requirement to that package.
+Name: WebKit2GTK Web Extension 4.0 (compat)
+Description: Compatibility entry that forwards to WebKit2GTK Web Extension 4.1
+Version: 4.1
+Requires: webkit2gtk-web-extension-4.1

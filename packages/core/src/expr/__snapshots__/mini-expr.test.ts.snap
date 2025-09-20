@@ -1,0 +1,9 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`MiniExpr evaluation > evaluates dice helpers deterministically with RNG > dice-rolls 1`] = `
+[
+  14,
+  8,
+  3,
+]
+`;
